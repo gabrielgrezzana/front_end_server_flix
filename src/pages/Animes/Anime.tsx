@@ -7,7 +7,7 @@ import { Path } from "../../types/routes";
 
 export function Anime() {
   const [anime, setAnime] = useState<Card[]>([]);
-  const [control, setControl] = useState(false)
+  const [control, setControl] = useState(false);
   const navigate = useNavigate();
 
   async function getAllAnime() {
@@ -17,13 +17,13 @@ export function Anime() {
 
   async function deleteCardAnime(id: string) {
     const response = await Api.deleteAnime(id);
-    if(response){
-      render()
+    if (response) {
+      render();
     }
   }
 
-  function render(){
-    setControl(!control)
+  function render() {
+    setControl(!control);
   }
 
   useEffect(() => {
@@ -37,31 +37,33 @@ export function Anime() {
           onClick={() => {
             navigate(Path.HOME);
           }}
-        >Voltar</Style.animeButton>
+        >
+          Voltar
+        </Style.animeButton>
       </Style.animeDivButton>
       <Style.animeBody>
-        {anime.map((el, index) => (
+        {anime.map((a, index) => (
           <Style.animeCard key={index}>
-            <h4>{el.title}</h4>
-            <Style.animeImg src={el.image} alt="img" />
-            <p>{el.description}</p>
-            <p>{el.avaliation}</p>
+            <h4>{a.title}</h4>
+            <Style.animeImg src={a.image} alt="img" />
+            <p>{a.description}</p>
+            <p>{a.avaliation}</p>
             <Style.AnimeDivMenu>
-                  <Style.AnimeButtonMenu
-                    onClick={() => {                      
-                      navigate(Path.FORM_ANIME_UPDATE + el.id);
-                    }}
-                  >
-                    Atualizar
-                  </Style.AnimeButtonMenu>
-                  <Style.AnimeButtonMenu
-                    onClick={() => {
-                      deleteCardAnime(el.id);
-                    }}
-                  >
-                    Remover
-                  </Style.AnimeButtonMenu>
-                </Style.AnimeDivMenu>
+              <Style.AnimeButtonMenu
+                onClick={() => {
+                  navigate(Path.FORM_ANIME_UPDATE + a.id);
+                }}
+              >
+                Atualizar
+              </Style.AnimeButtonMenu>
+              <Style.AnimeButtonMenu
+                onClick={() => {
+                  deleteCardAnime(a.id);
+                }}
+              >
+                Remover
+              </Style.AnimeButtonMenu>
+            </Style.AnimeDivMenu>
           </Style.animeCard>
         ))}
       </Style.animeBody>
