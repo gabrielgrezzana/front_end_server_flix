@@ -42,28 +42,28 @@ export function Serie() {
         </Style.SerieButton>
       </Style.SerieDivButton>
       <Style.SerieDiv>
-        {serie.map((el, index) => (
+        {serie.map((a, index) => (
           <Style.SerieBody key={index}>
-            <h4>{el.title}</h4>
-            <Style.SerieImg src={el.image} alt="img" />
-            <p>{el.description}</p>
-            <p>{el.avaliation}</p>
+            <h4>{a.title}</h4>
+            <Style.SerieImg src={a.image} alt="img" />
+            <p>{a.description}</p>
+            <p>{a.avaliation}</p>
             <Style.SerieDivMenu>
-                  <Style.SerieButtonMenu
-                    onClick={() => {                      
-                      navigate(Path.FORM_SERIE_UPDATE + el.id);
-                    }}
-                  >
-                    Atualizar
-                  </Style.SerieButtonMenu>
-                  <Style.SerieButtonMenu
-                    onClick={() => {
-                      deleteCardSerie(el.id);
-                    }}
-                  >
-                    Remover
-                  </Style.SerieButtonMenu>
-                </Style.SerieDivMenu>
+              <Style.SerieButtonMenu
+                onClick={() => {
+                  navigate(Path.FORM_SERIE_UPDATE + a.id);
+                }}
+              >
+                Atualizar
+              </Style.SerieButtonMenu>
+              <Style.SerieButtonMenu
+                onClick={() => {
+                  deleteCardSerie(a.id);
+                }}
+              >
+                Remover
+              </Style.SerieButtonMenu>
+            </Style.SerieDivMenu>
           </Style.SerieBody>
         ))}
       </Style.SerieDiv>

@@ -12,7 +12,7 @@ ${({ theme }) => css`
 
 export const movieBody = Styled.div`
 ${({ theme }) => css`
-  background-color: ${theme.colors.baseBg2};
+  background-color: ${theme.colors.baseBg5};
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -44,21 +44,25 @@ export const movieDivButton = Styled.div`
 ${({ theme }) => css`
   height: 5vh;
   width: 10%;
-  background-color: ${theme.colors.baseBg1};
+  background-color: ${theme.colors.baseBg4};
 `}
 `;
 
 export const movieButton = Styled.button`
 ${({ theme }) => css`
-  background-color: ${theme.colors.baseBg3};
-  height: 100%;
+  font-family: ${theme.source.fontFamily};
+  font-size: ${theme.source.FontSize2};
+  border: 2px solid black;
   width: 100%;
+  background-color: ${theme.colors.baseBg3};
+  margin-top: 70px;
+  cursor: pointer;
 `}
 `;
 
 export const MovieDivMenu = Styled.div`
 ${({ theme }) => css`
-  background-color: ${theme.colors.baseBg3};
+  background-color: ${theme.colors.baseBg5};
   height: 20px;
   width: 150px;
   display: flex;
@@ -71,16 +75,19 @@ ${({ theme }) => css`
 
 export const MovieButtonMenu = Styled.button`
 ${({ theme }) => css`
-  background-color: ${theme.colors.baseBg2};
-  height: 100%;
-  width: 80%;
+  font-family: ${theme.source.fontFamily};
+  font-size: ${theme.source.FontSize2};
+  border: 2px solid black;
+  width: 100%;
+  background-color: ${theme.colors.baseBg3};
+  margin-top: 70px;
   cursor: pointer;
 `}
 `;
 
 export const movieUpdateForm = Styled.form`
 ${({ theme }) => css`
-  background-color: ${theme.colors.baseBg2};
+  background-color: ${theme.colors.baseBg5};
   height: 60vh;
   width: 40%;
   margin: 5rem auto 0;
@@ -104,9 +111,12 @@ margin: 2rem auto;
 
 export const movieUpdateButton = Styled.button`
 ${({ theme }) => css`
-  background-color: ${theme.colors.baseBg3};
-  height: 100%;
+  font-family: ${theme.source.fontFamily};
+  font-size: ${theme.source.FontSize2};
+  border: 2px solid black;
   width: 100%;
+  background-color: ${theme.colors.baseBg3};
+  margin-top: 70px;
   cursor: pointer;
 `}
 `;

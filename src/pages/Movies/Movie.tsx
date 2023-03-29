@@ -6,8 +6,6 @@ import { Api } from "../../data/api/api";
 import { useNavigate } from "react-router-dom";
 import { Path } from "../../types/routes";
 
-
-
 export function Movie() {
   const [movie, setMovie] = useState<Card[]>([]);
   const [updateMovie, setUpdateMovie] = useState<Card[]>([]);
@@ -45,32 +43,32 @@ export function Movie() {
           Voltar
         </Style.movieButton>
       </Style.movieDivButton>
-          <Style.movieBody>
-            {movie.map((el, index) => (
-              <Style.movieCard key={index}>
-                <h4>{el.title}</h4>
-                <Style.movieImg src={el.image} alt="img" />
-                <p>{el.description}</p>
-                <p>{el.avaliation}</p>
-                <Style.MovieDivMenu>
-                  <Style.MovieButtonMenu
-                    onClick={() => {                                          
-                      navigate(Path.FORM_MOVIE_UPDATE + el.id);
-                    }}
-                  >
-                    Atualizar
-                  </Style.MovieButtonMenu>
-                  <Style.MovieButtonMenu
-                    onClick={() => {
-                      deleteCardMovie(el.id);
-                    }}
-                  >
-                    Remover
-                  </Style.MovieButtonMenu>
-                </Style.MovieDivMenu>
-              </Style.movieCard>
-            ))}
-          </Style.movieBody>                   
+      <Style.movieBody>
+        {movie.map((a, index) => (
+          <Style.movieCard key={index}>
+            <h4>{a.title}</h4>
+            <Style.movieImg src={a.image} alt="img" />
+            <p>{a.description}</p>
+            <p>{a.avaliation}</p>
+            <Style.MovieDivMenu>
+              <Style.MovieButtonMenu
+                onClick={() => {
+                  navigate(Path.FORM_MOVIE_UPDATE + a.id);
+                }}
+              >
+                Atualizar
+              </Style.MovieButtonMenu>
+              <Style.MovieButtonMenu
+                onClick={() => {
+                  deleteCardMovie(a.id);
+                }}
+              >
+                Remover
+              </Style.MovieButtonMenu>
+            </Style.MovieDivMenu>
+          </Style.movieCard>
+        ))}
+      </Style.movieBody>
     </Style.MovieDiv>
   );
 }

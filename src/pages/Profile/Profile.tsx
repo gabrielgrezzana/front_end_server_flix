@@ -42,24 +42,24 @@ export function Profile() {
         <h1>Perfil do Usuário</h1>
       </Style.profileHeader>
       <Style.profilebuttonSair
-          onClick={() => {
-            navigate(Path.HOME);
-          }}
-        >
-          Voltar
-        </Style.profilebuttonSair>
-      <Style.profileBody>       
+        onClick={() => {
+          navigate(Path.HOME);
+        }}
+      >
+        Voltar
+      </Style.profilebuttonSair>
+      <Style.profileBody>
         <Select options={options} selectOptions={setSelectValue} />
         {selectValue === "Movies" && (
           <>
-            {movie.map((el) => {
+            {movie.map((a) => {
               return (
-                <Style.profileElement key={el.id}>
+                <Style.profileElement key={a.id}>
                   <Style.profileCard>
-                    <h3>{el.title}</h3>
-                    <Style.profileImg src={el.image} alt="img" />
-                    <p>{el.description}</p>
-                    <p>{el.avaliation}</p>
+                    <h3>{a.title}</h3>
+                    <Style.profileImg src={a.image} alt="img" />
+                    <p>{a.description}</p>
+                    <p>{a.avaliation}</p>
                   </Style.profileCard>
                 </Style.profileElement>
               );
@@ -68,14 +68,14 @@ export function Profile() {
         )}
         {selectValue === "Series" && (
           <>
-            {serie.map((el) => {
+            {serie.map((b) => {
               return (
-                <Style.profileElement key={el.id}>
+                <Style.profileElement key={b.id}>
                   <Style.profileCard>
-                    <h3>{el.title}</h3>
-                    <Style.profileImg src={el.image} alt="img" />
-                    <p>{el.description}</p>
-                    <p>{el.avaliation}</p>
+                    <h3>{b.title}</h3>
+                    <Style.profileImg src={b.image} alt="img" />
+                    <p>{b.description}</p>
+                    <p>{b.avaliation}</p>
                   </Style.profileCard>
                 </Style.profileElement>
               );
@@ -84,14 +84,14 @@ export function Profile() {
         )}
         {selectValue === "Animes" && (
           <>
-            {anime.map((el) => {
+            {anime.map((c) => {
               return (
-                <Style.profileElement key={el.id}>
+                <Style.profileElement key={c.id}>
                   <Style.profileCard>
-                    <h3>{el.title}</h3>
-                    <Style.profileImg src={el.image} alt="img" />
-                    <p>{el.description}</p>
-                    <p>{el.avaliation}</p>
+                    <h3>{c.title}</h3>
+                    <Style.profileImg src={c.image} alt="img" />
+                    <p>{c.description}</p>
+                    <p>{c.avaliation}</p>
                   </Style.profileCard>
                 </Style.profileElement>
               );
